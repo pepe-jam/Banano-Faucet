@@ -1,131 +1,646 @@
-/* Ape Lincoln for President */
+@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css');
+@import url('https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/components/popup.min.css');
+
+* {
+    font-family: 'Overpass Mono', monospace !important;
+    user-select: none;
+}
+
+.ui.popup > .header {
+    font-size: 1.2rem !important;
+}
+
+.ui.popup {
+    color: #FBDD11 !important;
+    border: 2px #FBDD11 solid !important;
+    max-width: 14.6rem !important;
+    background-color: #000 !important;
+}
+
+.ui.popup:before {
+    width: .8rem !important;
+    height: .8rem !important;
+    border-bottom: 2px solid #FBDD11;
+    border-right: 2px solid #FBDD11;
+    border-radius: .1rem;
+    bottom: -0.54rem !important;
+    background-color: #000 !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.discord {
+    cursor: pointer !important;
+}
 
 header {
-  height: 250px;
-  width: 100%;
-  margin-top: -1px;
-  background-position: bottom;
-  background-repeat: repeat;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url(/Header\ Background.png);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+    height: 13rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 header img {
-  margin-top: 1%;
-  width: 33%;
-  max-width: 400px;
-  height: auto;
-  min-width: 225px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    height: 7rem;
+}
+
+header object {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 7rem;
+    height: auto;
+    animation: spin 10s ease 0.5;
+    border: none;
+}
+
+header > div {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Cantarell', sans-serif;
-  margin: 0 !important;
-  background-color: #212124;
-  overflow: wrap;
-  color:#FBDD11;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 !important;
+    color: #FBDD11;
+    font-size: 14pt;
+    padding: 0 10%;
+    background: url(/images/banano_future.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    backdrop-filter: blur(.4px);
 }
 
 main {
-  padding-bottom: 19px;
+    padding-bottom: 2rem;
 }
 
-@media(min-width: 768px) {
-  main {
-    width: 50%;
-  }
+a {
+    color: #fbdd11;
+    font-weight: 800;
 }
 
-@media(max-width: 767px) {
-  main {
-    width: 80%;
-  }
+a:hover, .discord:hover {
+    color: #c5ac10;
 }
 
 p {
-  /* These are technically the same, but use both */
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  -ms-word-break: break-all;
-  /* This is the dangerous one in WebKit, as it breaks things wherever */
-  word-break: break-all;
-  /* Instead use this non-standard one: */
-  word-break: break-word;
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
-
 .address-input {
-  padding-bottom: 18px;
+    padding-bottom: 18px;
 }
 
 .btn-container {
-  width: 67%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    justify-content: left;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 0;
 }
 
 button {
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
-  margin: 0;
-  font-family: inherit;
-  overflow: visible;
-  text-transform: none;
-  -webkit-appearance: button;
-  box-shadow: 0 7px 0 0 #e6c910!important;
-  width: 100%!important;
-  margin-top: 18px;
-  margin-bottom: 1.5rem!important;
-  font-weight: 700!important;
-  display: inline-block;
-  text-align: center;
-  vertical-align: middle;
-  user-select: none;
-  border: 1px solid transparent;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
-  color: #212529;
-  background-color: #fbdd11;
-  border-color: #fbdd11;
-  padding: .5rem 1rem;
-  font-size: 1.25rem;
-  line-height: 1.5;
-  border-radius: .3rem;
-  white-space: normal;
-  cursor: pointer;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: inherit;
+    overflow: visible;
+    text-transform: none;
+    -webkit-appearance: button;
+    box-shadow: 0 0 3px 3px #e6c910 !important;
+    width: 100%;
+    margin-top: 18px;
+    margin-bottom: .5rem !important;
+    font-weight: 700 !important;
+    text-align: center;
+    vertical-align: middle;
+    border: 2px solid #fbdd11;
+    border-radius: .8rem;
+    color: #fbdd11;
+    background-color: #000;
+    padding: .5rem 1rem;
+    font-size: 18pt;
+    white-space: normal;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+button:hover {
+    color: #fbdd11;
+    border-color: #fbdd11 !important;
+    box-shadow: 0 0 6px 6px #fbdd11 !important;
+    content: "Completed!" !important;
+}
+
+button:active {
+    color: #c5ac10;
+    border-color: #c5ac10 !important;
+    box-shadow: 0 0 5px 5px #c5ac10 !important;
+}
+
+#arrow_left {
+    flex-grow: 2;
+    text-align: right;
+    transition: padding-right .2s ease-in;
+}
+
+#arrow_right {
+    flex-grow: 2;
+    text-align: left;
+    transition: padding-left .2s ease-in;
+}
+
+.expandables {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.expandable {
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border: #c5ac10 2px solid;
+    border-radius: .5rem;
+    margin-bottom: .5rem;
+    line-height: 2rem;
+}
+
+.selected {
+    box-shadow: 0 0 3px 3px #fbdd11;
+}
+
+.expandable-title {
+    padding-left: 1rem;
+    font-size: 25pt;
+    cursor: pointer;
+}
+
+.expandable-title a {
+    text-decoration: none;
+}
+
+.expandable-title a:hover {
+    color: #FBDD11;
+}
+
+.expand-on-click {
+    display: none;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#support-creator a, #faucet a {
+    text-decoration: none;
+}
+
+.always-show-expandable {
+    text-align: left;
+}
+
+#get-btn {
+    width: 130px;
+    height: 40px;
+}
+
+input[type="text"], input[type="text"]:focus {
+    color: #000;
+    resize: none;
+    outline: none;
+}
+
+input::placeholder, input:-ms-input-placeholder, input::-ms-input-placeholder, input:-moz-placeholder, input::-moz-placeholder {
+    color: #FFF;
+    opacity: 1;
+}
+
+#support-creator, #what-is-banano, #banano-things {
+    margin-top: 1rem;
+}
+
+#banano-things p {
+    display: inline-block;
+}
+
+#faucet {
+    border: 3px solid #FBDD11;
+    border-radius: .6rem;
+    padding: 2rem 2rem 1rem 2rem;
+}
+
+.backdrop-blur {
+    background-color: #000000CC;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+
+form {
+    margin: 0;
+}
+
+form a {
+    cursor: pointer;
+}
+
+form > p > a:hover {
+    color: #c5ac10;
 }
 
 footer {
-  width: 100%;
-  background-color: #4CBF4B;
-  height: 69px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    color: #FBDD11;
+    background-color: #000;
+    padding: .2rem 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    border: 0.1rem solid #FBDD11;
+    border-radius: .5rem;
 }
 
-a,
-a:hover,
-a:visited {
-  color: #fbdd11;
-  font-weight: 700;
+.legal {
+    font-size: 70%;
 }
 
-footer p a,
-footer p a:hover,
-footer p a:visited {
-  color: #fbdd11;
-  font-weight: 700;
+box {
+    white-space: nowrap;
+}
+
+box > a {
+    border: .1rem solid #FBDD11;
+    border-radius: 2px;
+    padding: .2rem .2rem .1rem .2rem;
+    text-decoration: none !important;
+    white-space: nowrap;
+
+}
+
+box > a:hover {
+    border-color: #c5ac10;
+    filter: hue-rotate(-40deg);
+}
+
+box > a:active {
+    border-color: #c5ac10;
+    color: #c5ac10;
+    box-shadow: 0 0 2px 2px #c5ac10;
+}
+
+error {
+    display: inline-block;
+    background-color: #FBDD11;
+    color: #000;
+    padding: 0.3rem 0.8rem;
+}
+
+#faucet :nth-child(3) {
+    border-radius: .4rem .4rem 0 0;
+}
+
+#faucet :nth-child(5) {
+    border-radius: 0 .4rem .4rem .4rem;
+}
+
+::selection {
+    background: #FBDD11;
+    color: #000;
+}
+
+me {
+    color: #ce0775;
+}
+
+#faucet p me:hover {
+    color: #ff1190;
+    cursor: pointer;
+}
+
+#support-creator > p:nth-child(2) > b > me {
+    color: #ce0775;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+#support-creator > p:nth-child(2) > b > me:hover {
+    color: #ff1190;
+}
+
+prussia {
+    color: #4CBF4B;
+}
+
+#support-creator > p > prussia {
+    color: #4CBF4B;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+#support-creator > p > prussia:hover {
+    color: #63f662;
+}
+
+@media (max-width: 500px) {
+    header {
+        height: 10rem;
+    }
+
+    header object {
+        width: 4.5rem;
+    }
+
+    header img {
+        width: 15rem;
+    }
+
+    main {
+        width: 120%;
+    }
+
+
+    button {
+        font-size: 13pt;
+    }
+
+    #arrow_left {
+        padding-right: 1rem;
+    }
+
+    #arrow_right {
+        padding-left: 1rem;
+    }
+
+    .expandable-title {
+        font-size: 17pt;
+    }
+
+    #what-is-banano p {
+        line-height: 2.4rem !important;
+    }
+}
+
+@media (min-width: 501px) and (max-width: 768px) {
+    header {
+        height: 12rem;
+    }
+
+    header img {
+        margin-top: 1rem;
+    }
+
+    header object {
+        width: 7rem;
+    }
+
+    main {
+        width: 120%;
+    }
+
+    button {
+        font-size: 18pt;
+    }
+
+    #arrow_left {
+        padding-right: 1rem;
+    }
+
+    #arrow_right {
+        padding-left: 1rem;
+    }
+
+    .expandable-title {
+        font-size: 22pt;
+    }
+
+    #what-is-banano p {
+        line-height: 2.4rem !important;
+    }
+}
+
+@media (min-width: 769px) {
+    main {
+        width: 100%;
+    }
+
+    #arrow_left {
+        padding-right: 1rem;
+    }
+
+    #arrow_right {
+        padding-left: 1rem;
+    }
+
+    header {
+        height: 10rem;
+    }
+
+    #arrow_left {
+        padding-right: 4rem;
+    }
+
+    #arrow_right {
+        padding-left: 4rem;
+    }
+
+    #what-is-banano p {
+        line-height: 2.4rem !important;
+    }
+}
+
+@media (min-width: 1280px) {
+    main {
+        width: 80%;
+    }
+
+    header {
+        height: 12rem;
+    }
+
+    header object {
+        width: 7rem;
+    }
+
+    button {
+        font-size: 20pt;
+    }
+
+    #arrow_left {
+        padding-right: 8rem;
+    }
+
+    #arrow_right {
+        padding-left: 8rem;
+    }
+}
+
+@media (min-width: 1921px) {
+    main {
+        width: 70%;
+    }
+
+    header {
+        height: 12rem;
+    }
+
+    header object {
+        width: 8rem;
+    }
+
+    button {
+        font-size: 22pt;
+    }
+
+    #arrow_left {
+        padding-right: 8rem;
+    }
+
+    #arrow_right {
+        padding-left: 8rem;
+    }
+}
+
+.ban {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+footer a {
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.ban:hover {
+    cursor: pointer;
+}
+
+
+.ban_chan {
+    visibility: hidden;
+    color: #FBDD11;
+    text-align: center;
+    border: .1rem solid #FBDD11;
+    border-radius: 3px;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 111%;
+    left: 150%;
+    margin-left: -90px;
+    min-width: 140px;
+}
+
+.ban .ban_chan::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 7px;
+    border-style: solid;
+    border-color: #FBDD11 transparent transparent transparent;
+}
+
+.ban:hover .ban_chan {
+    visibility: visible;
+}
+
+#what-is-banano {
+    display: none;
+    align-items: center;
+}
+
+#spin {
+    animation: logo_spin 3s cubic-bezier(0.65, 0, 0.35, 1) 0s infinite normal both;
+}
+
+@keyframes logo_spin {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(720deg);
+    }
+}
+
+.loader-wrapper {
+    width: 100vw;
+    height: 120vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    z-index: 19;
+    overflow: hidden;
+}
+
+.loader {
+    display: inline-block;
+    width: 10vh;
+    height: 10vh;
+    position: relative;
+    border: .25rem solid #FBDD11;
+    margin-top: 30vh;
+    padding: .5vh;
+    border-radius: 1.5vh;
+    animation: spin 2s infinite ease;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(180deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loader-inner {
+    0% {
+        height: 0%;
+    }
+    25% {
+        height: 0%;
+    }
+    50% {
+        height: 100%;
+    }
+    75% {
+        height: 100%;
+    }
+    100% {
+        height: 0%;
+    }
 }
