@@ -201,8 +201,8 @@ app.post('/', async function (req, res) {
         }*/
 
 
-    if (req.cookies['timestamp']) {
-        if (Number(req.cookies['timestamp']) + claim_freq > Date.now()) {
+    if (req.cookies['ban_time']) {
+        if (Number(req.cookies['ban_time']) + claim_freq > Date.now()) {
             errors = "Your last claim was too soon, you can claim once per day"
             return res.send(nunjucks.render("index.html", {
                 errors: errors,
@@ -226,7 +226,7 @@ app.post('/', async function (req, res) {
             if (send == false) {
                 errors = "The Send failed, please try again"
             } else {
-                res.cookie('timestamp', String(Date.now()));
+                res.cookie('ban_time', String(Date.now()), {maxAge: 86400, sameSite: true});
                 //await db.set(address,String(Date.now()));
                 await replace(address, String(Date.now()));
                 given = true;
@@ -240,7 +240,7 @@ app.post('/', async function (req, res) {
         if (send == false) {
             errors = "Send failed"
         } else {
-            res.cookie('timestamp', String(Date.now()));
+            res.cookie('ban_time', String(Date.now()), {maxAge: 86400, sameSite: true});
             //await db.set(address,String(Date.now()));
             await insert(address, String(Date.now()));
             given = true;
