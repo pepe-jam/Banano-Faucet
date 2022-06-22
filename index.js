@@ -83,7 +83,7 @@ app.post('/', async function (req, res) {
     let errors = false;
     let address = req.body['addr'];
     let given = false;
-    let amount = (Math.floor(Math.random() * 7) / 100) + 0.01;
+    let amount = 0.05;
     let valid = await banano.is_valid(address);
     if (!valid) {
         errors = "Invalid banano address was given, check again"
@@ -98,13 +98,13 @@ app.post('/', async function (req, res) {
         }));
     }
     if (Number(current_bal) > 100) {
-        amount = (Math.floor(Math.random() * 8) / 100) + 0.02;
+        amount = 0.1;
     }
     if (on_break) {
-        amount = 0.02;
+        amount = 0.03;
     }
     if (await banano.is_unopened(address)) {
-        amount = 0.01;
+        amount = 0.019;
     }
     let today = new Date();
     today = String(today.getMonth() + 1) + "/" + String(today.getDate());
@@ -259,5 +259,5 @@ app.post('/', async function (req, res) {
 
 app.listen(8081, async () => {
     await banano.receive_deposits();
-    console.log(`Banoboto Faucet started.`)
+    console.log(`Banoboto's Faucet started.`)
 });

@@ -7,7 +7,8 @@ function delayedHide(popup, timeout) {
 }
 
 $(document).ready(function () {
-    $(".loader-wrapper").delay(200).fadeOut("slow");
+    $('body').css('backgroundImage', 'url(images/banano_future.png)');
+    $(".loader-wrapper").delay(1300).fadeOut("slow");
 
 
     $(".copy").click(function () {
@@ -85,13 +86,18 @@ function onSubmit() {
 let arrow_left = null
 let arrow_right = null
 let button = null
+let loaded = false
 
 document.addEventListener("DOMContentLoaded", function (event) {
     arrow_left = document.getElementById('arrow_left');
     arrow_right = document.getElementById('arrow_right')
     button = document.getElementById('btn-container');
-    button.addEventListener("mouseover", mouseOver, false);
-    button.addEventListener("mouseout", mouseOut, false);
+    try {
+        button.addEventListener("mouseover", mouseOver, false);
+        button.addEventListener("mouseout", mouseOut, false);
+    } catch (error) {
+        console.log(error)
+    }
 });
 
 function toggle_expandable(id) {

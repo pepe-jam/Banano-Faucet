@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- BananoChan for life -->
-        <meta lang="en">
-        <meta charset="utf-8">
-        <meta property="og:title" content="Banoboto Banano Faucet">
-        <meta property="og:description" content="Get free daily Banano, and Never Let Your Memes Be Dreams!">
-        <meta property="og:image" content="images/banchan_happy.png">
-        <meta property="og:url" content=""><!--TODO-->
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta name="keywords"
-              content="cryptocurrency, crypto, free, banano, dag, daily, faucet, banano faucet, free banano">
-        <title>Banoboto's Banano Faucet</title>
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-        <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
-        <script src="scripts/jquery-3.6.0.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/components/popup.min.js"></script>
-        <script src="scripts/script.js"></script>
-        <link href="style.css" rel="stylesheet" type="text/css"/>
-    </head>
+<head>
+    <!-- BananoChan for life -->
+    <meta lang="en">
+    <meta charset="utf-8">
+    <meta property="og:title" content="Banoboto Banano Faucet">
+    <meta property="og:description" content="Get free daily Banano, and Never Let Your Memes Be Dreams!">
+    <meta property="og:image" content="images/banchan_happy.png">
+    <meta property="og:url" content="https://faucet.banoboto.repl.co/">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="keywords"
+          content="cryptocurrency, crypto, free, banano, dag, daily, faucet, banano faucet, free banano">
+    <title>Banoboto's Banano Faucet</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+    <script src="scripts/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/components/popup.min.js"></script>
+    <script src="scripts/script.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
 <body>
 <div class="loader-wrapper">
     <object class="loader" data="images/banano.svg" type="image/svg+xml"></object>
@@ -43,7 +43,7 @@
             to feel free to donate</p>
         {% else %}
         <p>{{ amount }} Banano has been sent to address {{ address }}</p>
-        <p>Come back in 24 hours to claim Banano again!</p>
+        <p class="colored">Come back in 24 hours to claim Banano again!</p>
         <p>Donations to the faucet keep it running! <br>
             Please donate, look below on how to fill the faucet. <br>
             If the faucet has more than 100 bananos, payouts will increase!
